@@ -5,19 +5,19 @@ Rest API to fetch anime data from otakudesu.
 # get index home
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/home
+https://api.flue.my.id:5000/api/otakudesu/home
 ```
 
 # get ongoing anime
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/ongoing
+https://api.flue.my.id:5000/api/otakudesu/ongoing
 ```
 
 `You can get the next page by appending /?next=page-2 or other.`
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/ongoing/?next=page-2
+https://api.flue.my.id:5000/api/otakudesu/ongoing/?next=page-2
 ```
 
 ### results
@@ -47,13 +47,13 @@ https://latipharkat-api.my.id/api/otakudesu/ongoing/?next=page-2
 # get complete anime
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/complete
+https://api.flue.my.id:5000/api/otakudesu/complete
 ```
 
 `You can get the next page by appending /?next=page-2 or other.`
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/complete/?next=page-2
+https://api.flue.my.id:5000/api/otakudesu/complete/?next=page-2
 ```
 
 ### results
@@ -85,7 +85,7 @@ https://latipharkat-api.my.id/api/otakudesu/complete/?next=page-2
 With the required keyword
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/search/?keyword=kage+no+jitsu
+https://api.flue.my.id:5000/api/otakudesu/search/?keyword=kage+no+jitsu
 ```
 
 ### results
@@ -116,7 +116,7 @@ https://latipharkat-api.my.id/api/otakudesu/search/?keyword=kage+no+jitsu
 ## get all genre
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/genres
+https://api.flue.my.id:5000/api/otakudesu/genres
 ```
 
 ### results
@@ -137,10 +137,10 @@ https://latipharkat-api.my.id/api/otakudesu/genres
 ## search genre
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/genres/<genre>/
+https://api.flue.my.id:5000/api/otakudesu/genres/<genre>/
 ```
 
-### results example https://latipharkat-api.my.id/api/otakudesu/genres/action
+### results example https://api.flue.my.id:5000/api/otakudesu/genres/action
 
 ```JSON
 {
@@ -156,10 +156,10 @@ https://latipharkat-api.my.id/api/otakudesu/genres/<genre>/
 ## seach genre by append page
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/genres/<genre>/<page>
+https://api.flue.my.id:5000/api/otakudesu/genres/<genre>/<page>
 ```
 
-### results example https://latipharkat-api.my.id/api/otakudesu/genres/action/2
+### results example https://api.flue.my.id:5000/api/otakudesu/genres/action/2
 
 ```JSON
 {
@@ -177,7 +177,7 @@ https://latipharkat-api.my.id/api/otakudesu/genres/<genre>/<page>
 With the required data anime
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/info/?data=berserk-gluttony-sub-indo
+https://api.flue.my.id:5000/api/otakudesu/info/?data=berserk-gluttony-sub-indo
 ```
 
 ### results
@@ -197,7 +197,7 @@ https://latipharkat-api.my.id/api/otakudesu/info/?data=berserk-gluttony-sub-indo
 With the required data episode anime
 
 ```
-https://latipharkat-api.my.id/api/otakudesu/view/?data=woar-episode-9-sub-indo
+https://api.flue.my.id:5000/api/otakudesu/view/?data=woar-episode-9-sub-indo
 ```
 
 ### results
