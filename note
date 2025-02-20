@@ -1,0 +1,2 @@
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout privkey.pem -out fullchain.pem
+sudo gunicorn -w 4 -b 0.0.0.0:443 --certfile=fullchain.pem --keyfile=privkey.pem main:app
