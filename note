@@ -1,2 +1,11 @@
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout privkey.pem -out fullchain.pem
 sudo gunicorn -w 4 -b 0.0.0.0:443 --certfile=fullchain.pem --keyfile=privkey.pem main:app
+sudo gunicorn -w 4 -b 0.0.0.0:500 --certfile=fullchain.pem --keyfile=privkey.pem main:app
+gunicorn -w 4 -b 127.0.0.1:505 main:app
+
+gunicorn -w 4 -b 0.0.0.0 main:app
+
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=123, debug=True)

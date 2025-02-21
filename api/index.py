@@ -38,9 +38,9 @@ class WebScrapper:
 
             anime = {
                 "judul": title,
-                "cover": cover["src"],
+                "gambar": cover["src"],
                 "data": re.findall("https\:\/\/otakudesu\..*?\/anime\/(.*?)\/", str(thumb["href"]))[0],
-                "episode": "".join(episode),
+                "latest_episode": "".join(episode),
                 "release": release,
                 "release_on_every": release_on[0] if release_on else ""
             }

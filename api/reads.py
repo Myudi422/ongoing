@@ -96,6 +96,11 @@ class WebScrapper:
                 result = cursor.fetchone()
                 if result:
                     details.update(result)
+                            
+                    details["episode_number"] = str(details["episode_number"]) if details["episode_number"] is not None else None
+                    details["anime_id"] = str(details["anime_id"]) if details["anime_id"] is not None else None
+
+                    
                     # Jika video_time ada dan bukan None, pastikan outputnya berupa string dengan format "x.x"
                     if "video_time" in details and details["video_time"] is not None:
                         if isinstance(details["video_time"], (int, float)):
