@@ -146,7 +146,6 @@ def info():
                         else:
                             ep["video_time"] = None
                         ep["ditonton"] = "0"  # default jika belum ada data
-
                     # Hilangkan duplikasi berdasarkan episode_number
                     unique_episodes = {}
                     for ep in episodes:
@@ -161,8 +160,6 @@ def info():
                     episodes.sort(key=lambda x: int(x["episode_number"]) if x["episode_number"].isdigit() else x["episode_number"])
                     
                     connection.close()
-                    return jsonify(episodes), 200
-
         # Fallback: jika parameter anime_id tidak disediakan, gunakan parameter 'data'
         data_param = request.args.get("data")
         if data_param:
