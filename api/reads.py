@@ -1,6 +1,8 @@
 from .module import *
 import re
 import pymysql
+import cloudscraper
+from bs4 import BeautifulSoup
 
 # Konfigurasi database (sama dengan DB_CONFIG di atas)
 DB_CONFIG = {
@@ -33,13 +35,17 @@ class WebScrapper:
             href_episode = span["href"]
             release_episode = data.find("span", attrs={"class": "zeebr"}).string
 
-            # Ambil bagian URL episode (contoh: "atnsk-episode-7-sub-indo")
+            # Ambil bagian URL episode (contoh: "wdbrkr-s2-episode-1-sub-indo" atau "yami-heal-sub-indo")
             episode_data_list = re.findall(r"https\:\/\/otakudesu\..*?\/episode\/(.*?)\/", str(href_episode))
             episode_data = episode_data_list[0] if episode_data_list else ""
             
             # Parse nomor episode dari episode_data
             ep_match = re.search(r'episode-(\d+)', episode_data)
-            episode_number = ep_match.group(1) if ep_match else None
+            if ep_match:
+                episode_number = ep_match.group(1)
+            else:
+                # Jika tidak ditemukan pola "episode-<nomor>" di URL, asumsikan episode 1
+                episode_number = "1"
 
             # Ambil detail tambahan dari tabel nonton dan thumbnail jika memungkinkan
             if episode_number and hasattr(self, 'nonton_anime_id') and self.nonton_anime_id:
@@ -100,7 +106,6 @@ class WebScrapper:
                     details["episode_number"] = str(details["episode_number"]) if details["episode_number"] is not None else None
                     details["anime_id"] = str(details["anime_id"]) if details["anime_id"] is not None else None
 
-                    
                     # Jika video_time ada dan bukan None, pastikan outputnya berupa string dengan format "x.x"
                     if "video_time" in details and details["video_time"] is not None:
                         if isinstance(details["video_time"], (int, float)):
@@ -177,8 +182,8 @@ class Reads(WebScrapper):
         self.nonton_anime_id = nonton_anime_id  # digunakan untuk query ke tabel nonton dan thumbnail
         self.telegram_id = telegram_id          # digunakan untuk join dengan tabel waktu_terakhir_tontonan
 
-    def response(self) -> str:
-        scrap = cloudscraper.create_scraper()
-        response = scrap.get(self._url)
+    def response(self) -> BeautifulSoup:
+        scraper = cloudscraper.create_scraper()
+        response = scraper.get(self._url)
         soup = BeautifulSoup(response.text, "html.parser")
         return soup
