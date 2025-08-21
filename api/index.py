@@ -12,7 +12,7 @@ class WebScrapper:
         self._url = url
         self.data = []
         self.db_config = {
-            "host": "143.198.85.46",
+            "host": "localhost",
             "user": "ccgnimex",
             "password": "aaaaaaac",
             "db": "ccgnimex"  # asumsi nama database adalah 'otakudesu'
