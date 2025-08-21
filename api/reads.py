@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 # Konfigurasi database (sama dengan DB_CONFIG di atas)
 DB_CONFIG = {
-    "host": "143.198.85.46",
+    "host": "localhost",
     "user": "ccgnimex",
     "password": "aaaaaaac",
     "db": "ccgnimex",
