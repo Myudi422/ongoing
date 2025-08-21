@@ -40,7 +40,7 @@ class View:
                     # Format ulang link Pixeldrain
                     if pd_link and "pixeldrain.com/u/" in pd_link:
                         file_id = pd_link.split("/")[-1]
-                        pd_link = f"https://cdn.pd4.workers.dev/api/file/{file_id}?download"
+                        pd_link = f"https://pd1.sriflix.myd/api/file/{file_id}?download"
 
                     download_links[resolution] = pd_link or "Link tidak ditemukan"
 
