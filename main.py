@@ -15,7 +15,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1)
 
 # Konfigurasi database (sesuaikan jika diperlukan)
 DB_CONFIG = {
-    "host": "143.198.85.46",
+    "host": "localhost",
     "user": "ccgnimex",
     "password": "aaaaaaac",
     "db": "ccgnimex",  # asumsi nama database adalah 'ccgnimex'
